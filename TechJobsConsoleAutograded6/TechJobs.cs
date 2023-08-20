@@ -1,4 +1,6 @@
-﻿namespace TechJobsConsoleAutograded6
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TechJobsConsoleAutograded6
 {
     public class TechJobs
     {
@@ -134,6 +136,12 @@
         // TODO: complete the PrintJobs method.
         public void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
+            string input = Console.ReadLine();
+            if (input.Equals(""))
+            {
+                Console.WriteLine("No");
+                return;
+            }
             foreach (Dictionary<string, string> job in someJobs)
             {
                 Console.WriteLine(Environment.NewLine + "*****");
