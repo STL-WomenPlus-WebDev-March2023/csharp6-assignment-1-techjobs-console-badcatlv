@@ -39,7 +39,7 @@ namespace TechJobsConsoleAutograded6
 
                     if (columnChoice.Equals("all"))
                     {
-                        PrintJobs(JobData.FindByValue(columnChoice));
+                        PrintJobs(JobData.FindAll());
                     }
                     else
                     {
@@ -65,7 +65,7 @@ namespace TechJobsConsoleAutograded6
                     if (columnChoice.Equals("all"))
                     {
                         //Console.WriteLine("Search all fields not yet implemented.");
-                        PrintJobs(JobData.FindAll());
+                        PrintJobs(JobData.FindByValue(searchTerm));
                     }
                     else
                     {
@@ -146,9 +146,9 @@ namespace TechJobsConsoleAutograded6
             {
                 Console.WriteLine(Environment.NewLine + "*****");
 
-                foreach (KeyValuePair<string, string> column in job)
+                foreach (KeyValuePair<string, string> row in job)
                 {
-                    Console.WriteLine(column.Key + ": " + column.Value);
+                    Console.WriteLine(row.Key + ": " + row.Value);
                 }
 
                 Console.WriteLine("*****");

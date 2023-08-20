@@ -46,19 +46,19 @@ namespace TechJobsConsoleAutograded6
         {
             // load data, if not already loaded
             LoadData();
-            //iterate thru dictionary to find search key, but only console once
-            //even if the search key appears multiple times within the job posting
+
+            string upperCaseValue = value.ToUpper();
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
-            foreach (Dictionary<string, string> row in AllJobs)
+            foreach (Dictionary<string, string> job in AllJobs)
             {
-                foreach(string values in row.Values)
+                foreach(string aValue in job.Values)
                 {
-                    if (values.Contains(value))
+                    if (aValue.ToUpper().Contains(upperCaseValue))
                     {
-                        if (jobs.Contains(row))
+                        if (!jobs.Contains(job))
                         {
-                            jobs.Add(row);
+                            jobs.Add(job);
                         }
                     }
                 }
