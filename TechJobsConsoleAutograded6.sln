@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1704.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechJobsConsoleAutograded6", "TechJobsConsoleAutograded6\TechJobsConsoleAutograded6.csproj", "{DCCF5DB6-062E-4119-A891-86A922543CEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechJobsConsoleAutogradedG6", "TechJobsConsoleAutograded6\TechJobsConsoleAutogradedG6.csproj", "{DCCF5DB6-062E-4119-A891-86A922543CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutogradingTests", "AutogradingTests\AutogradingTests.csproj", "{A1DEC38C-0F02-4937-8F14-A98E857AB938}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutogradingTests", "AutogradingTests\AutogradingTests.csproj", "{A1DEC38C-0F02-4937-8F14-A98E857AB938}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A8CE4D9-2870-45E3-A7AE-EAC9A1266D2A}"
 	ProjectSection(SolutionItems) = preProject
