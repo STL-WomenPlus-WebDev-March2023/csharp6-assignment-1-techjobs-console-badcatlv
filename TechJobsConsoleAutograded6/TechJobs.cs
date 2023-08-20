@@ -39,7 +39,7 @@ namespace TechJobsConsoleAutograded6
 
                     if (columnChoice.Equals("all"))
                     {
-                        PrintJobs(JobData.FindAll());
+                        PrintJobs(JobData.FindByValue(columnChoice));
                     }
                     else
                     {

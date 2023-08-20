@@ -46,8 +46,24 @@ namespace TechJobsConsoleAutograded6
         {
             // load data, if not already loaded
             LoadData();
+            //iterate thru dictionary to find search key, but only console once
+            //even if the search key appears multiple times within the job posting
+            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
-            return null;
+            foreach (Dictionary<string, string> row in AllJobs)
+            {
+                foreach(string values in row.Values)
+                {
+                    if (values.Contains(value))
+                    {
+                        if (jobs.Contains(row))
+                        {
+                            jobs.Add(row);
+                        }
+                    }
+                }
+            }
+            return jobs;
         }
 
         /**
