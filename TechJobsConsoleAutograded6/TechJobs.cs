@@ -136,19 +136,11 @@ namespace TechJobsConsoleAutograded6
         // TODO: complete the PrintJobs method.
         public void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            for (int i = 0; i < someJobs.Count; i++)
+            if (someJobs.Count == 0)
             {
-                string input = Console.ReadLine();
-                bool valueExists = someJobs[i].ContainsValue(input);
-
-                if (valueExists == false)
-                {
-                    Console.WriteLine("No results");
-                    return;
-                } else if (valueExists == true)
-                {
-                    continue;
-                }
+                Console.WriteLine("No results");
+                return;
+            }
 
             foreach (Dictionary<string, string> job in someJobs)
             {
@@ -161,7 +153,7 @@ namespace TechJobsConsoleAutograded6
 
                 Console.WriteLine("*****");
             }
-        }
+        
             //Console.WriteLine("PrintJobs is not implemented yet");
         }
     }
