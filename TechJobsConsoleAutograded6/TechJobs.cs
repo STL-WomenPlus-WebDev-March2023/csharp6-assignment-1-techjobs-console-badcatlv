@@ -44,7 +44,7 @@ namespace TechJobsConsoleAutograded6
                     else
                     {
                         List<string> results = JobData.FindAll(columnChoice);
-                        //results.Sort();
+                        
                         Console.WriteLine(Environment.NewLine + "*** All " + columnChoices[columnChoice] + " Values ***");
                         foreach (string item in results)
                         {
@@ -146,9 +146,9 @@ namespace TechJobsConsoleAutograded6
             {
                 Console.WriteLine(Environment.NewLine + "*****");
 
-                foreach (KeyValuePair<string, string> row in job)
+                foreach (KeyValuePair<string, string> kvp in job)
                 {
-                    Console.WriteLine(row.Key + ": " + row.Value);
+                    Console.WriteLine(kvp.Key + ": " + kvp.Value);
                 }
 
                 Console.WriteLine("*****");
