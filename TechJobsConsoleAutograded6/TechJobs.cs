@@ -44,7 +44,7 @@ namespace TechJobsConsoleAutograded6
                     else
                     {
                         List<string> results = JobData.FindAll(columnChoice);
-
+                        results.Sort();
                         Console.WriteLine(Environment.NewLine + "*** All " + columnChoices[columnChoice] + " Values ***");
                         foreach (string item in results)
                         {

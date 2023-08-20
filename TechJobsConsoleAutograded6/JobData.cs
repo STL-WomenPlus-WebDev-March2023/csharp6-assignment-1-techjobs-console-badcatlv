@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Immutable;
 using System.Text;
 
 namespace TechJobsConsoleAutograded6
@@ -11,7 +12,12 @@ namespace TechJobsConsoleAutograded6
         public static List<Dictionary<string, string>> FindAll()
         {
             LoadData();
-            return AllJobs;
+
+            //bonus for shallow copy
+            var jobs = new List<Dictionary<string, string>>();
+            
+            jobs.AddRange(AllJobs);
+            return jobs;
         }
 
         /*
@@ -28,6 +34,7 @@ namespace TechJobsConsoleAutograded6
             {
                 
                 string aValue = job[column];
+               
 
                 if (!values.Contains(aValue))
                 {
