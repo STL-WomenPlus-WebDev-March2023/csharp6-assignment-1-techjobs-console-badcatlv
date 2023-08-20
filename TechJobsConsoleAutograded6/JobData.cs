@@ -29,7 +29,7 @@ namespace TechJobsConsoleAutograded6
             LoadData();
 
             List<string> values = new List<string>();
-
+            //values.Sort();
             foreach (Dictionary<string, string> job in AllJobs)
             {
                 
@@ -41,7 +41,7 @@ namespace TechJobsConsoleAutograded6
                     values.Add(aValue);
                 }
             }
-
+            values.Sort();
             return values;
         }
 
