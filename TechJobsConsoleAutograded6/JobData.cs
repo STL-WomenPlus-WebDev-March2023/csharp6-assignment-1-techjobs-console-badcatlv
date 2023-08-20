@@ -26,6 +26,7 @@ namespace TechJobsConsoleAutograded6
 
             foreach (Dictionary<string, string> job in AllJobs)
             {
+                
                 string aValue = job[column];
 
                 if (!values.Contains(aValue))
@@ -47,14 +48,14 @@ namespace TechJobsConsoleAutograded6
             // load data, if not already loaded
             LoadData();
 
-            string upperCaseValue = value.ToUpper();
+            value = value.ToUpper();
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
             foreach (Dictionary<string, string> job in AllJobs)
             {
-                foreach(string aValue in job.Values)
+                foreach(string officialValue in job.Values)
                 {
-                    if (aValue.ToUpper().Contains(upperCaseValue))
+                    if (officialValue.ToUpper().Contains(value))
                     {
                         if (!jobs.Contains(job))
                         {
@@ -79,6 +80,7 @@ namespace TechJobsConsoleAutograded6
             LoadData();
 
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+            value = value.ToUpper();
 
             foreach (Dictionary<string, string> row in AllJobs)
             {
@@ -86,7 +88,7 @@ namespace TechJobsConsoleAutograded6
 
 
                 //TODO: Make search case-insensitive
-                if (aValue.Contains(value))
+                if (aValue.ToUpper().Contains(value))
                 {
                     jobs.Add(row);
                 }
