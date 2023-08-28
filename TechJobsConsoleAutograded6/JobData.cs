@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Immutable;
 using System.Text;
 
 namespace TechJobsConsoleAutograded6
@@ -11,7 +12,12 @@ namespace TechJobsConsoleAutograded6
         public static List<Dictionary<string, string>> FindAll()
         {
             LoadData();
-            return AllJobs;
+
+            //bonus for shallow copy
+            var jobs = new List<Dictionary<string, string>>();
+            
+            jobs.AddRange(AllJobs);
+            return jobs;
         }
 
         /*
@@ -23,17 +29,18 @@ namespace TechJobsConsoleAutograded6
             LoadData();
 
             List<string> values = new List<string>();
-
             foreach (Dictionary<string, string> job in AllJobs)
             {
+                
                 string aValue = job[column];
+               
 
                 if (!values.Contains(aValue))
                 {
                     values.Add(aValue);
                 }
             }
-
+            values.Sort();
             return values;
         }
 
@@ -47,7 +54,23 @@ namespace TechJobsConsoleAutograded6
             // load data, if not already loaded
             LoadData();
 
-            return null;
+            value = value.ToUpper();
+            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+
+            foreach (Dictionary<string, string> job in AllJobs)
+            {
+                foreach(string officialValue in job.Values)
+                {
+                    if (officialValue.ToUpper().Contains(value))
+                    {
+                        if (!jobs.Contains(job))
+                        {
+                            jobs.Add(job);
+                        }
+                    }
+                }
+            }
+            return jobs;
         }
 
         /**
@@ -63,6 +86,7 @@ namespace TechJobsConsoleAutograded6
             LoadData();
 
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+            value = value.ToUpper();
 
             foreach (Dictionary<string, string> row in AllJobs)
             {
@@ -70,7 +94,7 @@ namespace TechJobsConsoleAutograded6
 
 
                 //TODO: Make search case-insensitive
-                if (aValue.Contains(value))
+                if (aValue.ToUpper().Contains(value))
                 {
                     jobs.Add(row);
                 }
